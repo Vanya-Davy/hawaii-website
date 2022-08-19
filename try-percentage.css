@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* percentage height */
+html,
+body {
+    height: 100%;
+}
+
+div.black {
+  background-color: black;
+  width: 300px;
+  height: 100%;
+}

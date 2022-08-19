@@ -1,0 +1,255 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  // sticky header
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: white;
+  // box-shadow
+  box-shadow: 3px 3px 5px 1px rgb(148, 142, 142);
+  transition: all 0.5s ease;
+
+  div.logo {
+    display: flex;
+    align-items: center;
+    flex: 5 1 400px;
+    margin-left: 2rem;
+    img {
+      width: 6vw;
+      height: 6vw;
+    }
+  }
+  nav {
+    flex: 2 1 400px;
+    ul {
+      display: flex;
+      list-style-type: none;
+      justify-content: space-around;
+      li {
+        a {
+          color: #09777d;
+          text-decoration: none;
+          font-size: 1.35rem;
+        }
+      }
+    }
+  }
+}
+
+main {
+  section.backImage {
+    min-height: 90vh;
+    width: 100%;
+    background-image: url("../資源包1/Pictures/pexels-photo-416676.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    justify-content: center; // 兩行文字置中
+    align-items: center; //按鈕置中
+    flex-direction: column;
+    text-align: center; //每行文字內容都置中
+
+    h3 {
+      font-size: 3.5rem;
+      color: white;
+      margin: 2rem 0rem;
+    }
+
+    button.start {
+      background-color: #3bf0e5;
+      padding: 0.75rem 1.5rem;
+      color: black;
+      font-size: 1.5rem;
+      border: none; //將預設外框去掉
+      border-radius: 1rem;
+      cursor: pointer;
+    }
+
+    div.filter {
+      background-color: rgba(0, 0, 0, 0.2);
+      width: 100%;
+      min-height: 90vh;
+      position: absolute; //不受 normal flow 預設影響，上面也要記得加入。也會將預設按鈕效果去掉
+      top: 0;
+      z-index: -1;
+    }
+  }
+
+  section.second {
+    display: flex;
+    align-items: center; //按鈕置中
+    flex-direction: column;
+    text-align: center; //每行文字內容都置中
+
+    h2 {
+      font-size: 2rem;
+      margin: 2rem 0rem;
+    }
+
+    section.cards {
+      display: flex;
+      width: 80%;
+      min-height: 80vh;
+      flex-wrap: wrap;
+
+      div.card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem;
+        flex: 1 1 300px;
+        div.image-container {
+          overflow: hidden; //讓放大的圖片，僅在邊框內顯示
+          margin: 1rem 0rem;
+            width: 15vw;
+            height: 15vw;
+            border-radius: 50%;
+          img {
+            // margin: 1rem 0rem;
+            width: 15vw;
+            height: 15vw;
+            border-radius: 50%;
+            transition: all 0.2s;
+          }
+          // scale image affect (當游標移到圖片，圖片會放大)
+          img:hover {
+            transform: scale(1.2);
+          }
+        }
+        h4 {
+          font-size: 2rem;
+          margin: 1rem 0rem;
+        }
+        p {
+          font-size: 1.25rem;
+        }
+        a {
+          text-decoration: none;
+          padding: 1rem 1.5rem;
+          background-color: #09777d;
+          color: white;
+          font-size: 1.25rem;
+          margin: 1rem 0rem;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40vh;
+  background-color: rgb(175, 174, 174);
+  div.logo {
+    display: flex;
+    align-items: center;
+    img {
+      width: 6vw;
+      height: 6vw;
+    }
+  }
+
+  nav {
+    width: 30%;
+    ul {
+      display: flex;
+      list-style-type: none;
+      width: 100%;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      li{
+        flex-basis: 100px;
+        a {
+          color: black;
+          text-decoration: none;
+          font-size: 1.35rem;
+        }
+      }
+    }
+  }
+
+  section.links {
+    a {
+      margin:0rem 1rem;
+      img{
+        width: 3vw;
+        height: 3vw;
+      }
+    }
+  }
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+// scrollbar setting
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #09777d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(84, 157, 199);
+}
+
+@media screen and (max-width: 700px) {
+  main {
+    section.sceond {
+      section.cards {
+        div.card {
+          img {
+            width: 45vw;
+            height: 45vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  header {
+    div.logo {
+      margin-left: 0.5rem;
+      img {
+        width: 10vw;
+        height: 10vw;
+      }
+    }
+  }
+}
